@@ -253,17 +253,31 @@ document.querySelector(".main").addEventListener("click", (e) => {
         let player1Name = document.querySelector("#player1-name-input").value;
         elementManipulator.hide(document.querySelectorAll(".name-edit")[0]);
         elementManipulator.show(document.querySelectorAll(".name-display")[0]);
-        document.querySelector(".player1-title").textContent = player1Name;
-        document.querySelector(".player1-name").textContent = player1Name;
-        player1.name = player1Name;
+        if (player1Name == "") {
+            document.querySelector(".player1-title").textContent = "Player 1:";
+            document.querySelector(".player1-name").textContent = "Player 1";
+            player1.name = "Player 1";
+        }
+        else {
+            document.querySelector(".player1-title").textContent = player1Name + ":";
+            document.querySelector(".player1-name").textContent = player1Name;
+            player1.name = player1Name;
+        }
     }
     else if (target == "submit-player2-name") {
         let player2Name = document.querySelector("#player2-name-input").value;
         elementManipulator.hide(document.querySelectorAll(".name-edit")[1]);
         elementManipulator.show(document.querySelectorAll(".name-display")[1]);
-        document.querySelector(".player2-title").textContent = player2Name;
-        document.querySelector(".player2-name").textContent = player2Name;
-        player2.name = player2Name;
+        if (player2Name == "") {
+            document.querySelector(".player2-title").textContent = "Player 2:";
+            document.querySelector(".player2-name").textContent = "Player 2";
+            player2.name = "Player 2";
+        }
+        else {
+            document.querySelector(".player2-title").textContent = player2Name + ":";
+            document.querySelector(".player2-name").textContent = player2Name;
+            player2.name = player2Name;
+        }
     }
 
     // When attempting to start the first game - create the players
